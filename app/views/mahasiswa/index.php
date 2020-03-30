@@ -7,7 +7,7 @@
     </div>
 
     <div class="row">
-        <div class="co-lg-6">
+        <div class="col-lg-6">
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formModal">
                 Tambah Data Mahasiswa
             </button>
@@ -17,9 +17,10 @@
 
             <ul class="list-group">
                 <?php foreach ($data['mhs'] as $mhs) : ?>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <li class="list-group-item">
                         <?= $mhs['nama']; ?>
-                        <a href="<?= BASEURL;  ?>/mahasiswa/detail/<?= $mhs['id'] ?>" class="badge badge-dark">detail</a>
+                        <a href="<?= BASEURL;  ?>/mahasiswa/hapus/<?= $mhs['id'] ?>" class="badge badge-danger float-right ml-1" onclick="return confirm('Yakin?');">hapus</a>
+                        <a href="<?= BASEURL;  ?>/mahasiswa/detail/<?= $mhs['id'] ?>" class="badge badge-dark float-right ml-1">detail</a>
                     </li>
                 <?php endforeach; ?>
             </ul>
